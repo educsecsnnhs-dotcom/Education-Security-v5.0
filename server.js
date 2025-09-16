@@ -114,7 +114,7 @@ app.use((err, req, res, next) => {
 // Fallback → login.html if exists
 // ------------------------------
 app.get('*', (req, res) => {
-  const login = path.join(__dirname, 'public', 'html', 'login.html');
+  const login = path.join(__dirname, 'public', 'html', 'index.html');
   if (fs.existsSync(login)) return res.sendFile(login);
   return res.status(404).send('Not Found');
 });

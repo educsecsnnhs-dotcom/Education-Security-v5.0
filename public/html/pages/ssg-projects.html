@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SSG Projects</title>
+  <link rel="stylesheet" href="../css/ssg.css">
+  <script src="../js/auth.js" defer></script> <!-- ✅ ADD THIS LINE -->
+  <script src="../js/page-utils.js" defer></script> <!-- ✅ Load page-utils.js -->
+</head>
+<body>
+  <h1>🏛️ SSG Projects</h1>
+
+  <div id="projectsList"></div>
+
+  <script>
+    async function loadProjects() {
+      // Ensure Auth and PageUtils are available
+      if (!window.Auth || !window.PageUtils) {
+        console.error("Auth or PageUtils not loaded. Ensure public/js/auth.js and public/js/page-utils.js are included.");
+        Auth.logout();
+        return;
+      }
+
+      try {
+        // ✅ Use PageUtils.fetchJson
+        const data = await PageUtils.fetchJson("/api/ssg/projects", { method: "GET" });
+
+        const list = document.getElementById("projectsList");
+        list.innerHTML = "";
+
+        if (!data || !data.length) {
+          list.innerHTML = "<p class='muted small'>No projects found.</p>"; // Use muted small for consistency
+          return;
+        }
+
+        data.forEach(p => {
+          const div = document.createElement("div");
+          div.className = "project";
+          div.innerHTML = `
+            <h3>${PageUtils.escapeHtml(p.name)}</h3>
+            <p>${PageUtils.escapeHtml(p.description)}</p>
+            <small>Status: ${PageUtils.escapeHtml(p.status)}</small>
+            <small>Created by: ${PageUtils.escapeHtml(p.createdBy)} on ${PageUtils.niceDate(p.createdAt)}</small>
+          `;
+          list.appendChild(div);
+        });
+      } catch (err) {
+        console.error("Error loading projects:", err);
+        document.getElementById("projectsList").innerHTML = "<p class='muted small'>Failed to load projects.</p>";
+      }
+    }
+    document.addEventListener('DOMContentLoaded', loadProjects); // Load on DOMContentLoaded
+  </script>
+</body>
+</html>

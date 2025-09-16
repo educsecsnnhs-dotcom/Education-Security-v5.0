@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome - EDU-SEC</title>
+
+  <!-- CSS: note path relative to /public/html/welcome.html -->
+  <link rel="stylesheet" href="../css/welcome.css">
+
+  <!-- ✅ Load auth.js first, then page-utils, then menu, then welcome -->
+  <script src="../js/auth.js" defer></script>
+  <script src="../js/page-utils.js" defer></script>
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/welcome.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <nav class="sidebar" aria-label="Main navigation">
+      <div class="brand">EDU-SEC</div>
+      <ul id="menuList" class="menu"></ul>
+    </nav>
+
+    <!-- App area -->
+    <div class="app-wrap">
+      <header>
+        <div class="header-left">
+          <div class="title">SNNHS SCHOOL PORTAL</div>
+          <div id="clock">--:--:--</div>
+        </div>
+
+        <div class="header-actions">
+          <div id="impersonationArea"></div>
+          <button id="backToSuperBtn" class="btn ghost" style="display:none">Back to SuperAdmin</button>
+          <button id="logoutBtn" class="btn logout">Logout</button>
+        </div>
+      </header>
+
+      <main>
+        <div class="grid">
+          <div>
+            <!-- User Info -->
+            <section class="user-info card">
+              <h2>👋 Welcome, <span id="userName">User</span></h2>
+              <p class="small muted">Role: <strong id="userRole">Role</strong></p>
+              <p id="todayDate" class="small muted"></p>
+            </section>
+
+            <!-- Announcements -->
+            <section class="card" style="margin-top:16px">
+              <h2>📌 School-wide Announcements</h2>
+              <div id="schoolAnnouncements" class="announcement-list">
+                <div class="muted small">Loading announcements…</div>
+              </div>
+            </section>
+
+            <!-- Quick Actions (rendered dynamically) -->
+            <section class="card" style="margin-top:16px">
+              <h2>🔧 Quick Actions</h2>
+              <div id="quickActions" aria-live="polite"></div>
+            </section>
+
+            <!-- SSG Announcements (Added for SSG role) -->
+            <section class="card" style="margin-top:16px">
+              <h2>📢 SSG Announcements</h2>
+              <div id="ssgAnnouncements" class="announcement-list">
+                <div class="muted small">Loading SSG announcements…</div>
+              </div>
+            </section>
+
+            <!-- SSG Projects (Added for SSG role) -->
+            <section class="card" style="margin-top:16px">
+              <h2>🛠️ SSG Projects</h2>
+              <div id="ssgProjects" class="announcement-list">
+                <div class="muted small">Loading SSG projects…</div>
+              </div>
+            </section>
+
+            <!-- spacer -->
+            <div style="height:24px"></div>
+          </div>
+
+          <!-- Right column -->
+          <aside class="aside-column">
+            <section class="card">
+              <h2>🏫 School Info</h2>
+              <div id="pdfHolder" class="pdf-viewer" aria-live="polite">
+                <!-- JS will insert embed or placeholder -->
+                <div class="small muted">Checking school-info.pdf…</div>
+              </div>
+            </section>
+
+            <section class="card">
+              <h2>🧭 Tips</h2>
+              <p class="small muted">Use the sidebar to navigate. If you're a SuperAdmin you can impersonate other users (button appears in header).</p>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal placeholder -->
+  <div id="modalRoot" style="display:none"></div>
+</body>
+</html>

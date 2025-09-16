@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Archives - EDU-SEC</title>
+  <link rel="stylesheet" href="../css/archives.css">
+  <script src="../js/page-utils.js" defer></script>
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/pages/archives.js" defer></script>
+</head>
+<body>
+  <nav class="sidebar"><div class="brand">EDU-SEC</div><ul id="menuList" class="menu"></ul></nav>
+  <div class="app-wrap">
+    <header>
+      <div class="header-left"><div class="title">Archives</div><div id="clock">--:--:--</div></div>
+      <div class="header-actions"><button id="logoutBtn" class="btn logout">Logout</button></div>
+    </header>
+
+    <main>
+      <div class="grid" style="grid-template-columns:1fr;">
+        <section class="card">
+          <h2>🗂️ Archives</h2>
+          <div id="archivesList"><div class="muted small">Loading archives…</div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="modalRoot" style="display:none"></div>
+</body>
+</html>

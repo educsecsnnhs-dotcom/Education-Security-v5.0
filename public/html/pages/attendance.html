@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Attendance - EDU-SEC</title>
+  <link rel="stylesheet" href="../css/attendance.css">
+  <script src="../js/page-utils.js" defer></script>
+  <script src="../js/menu.js" defer></script><script src="../js/pages/attendance.js" defer>
+  </script>
+</head>
+  <body>
+<nav class="sidebar"><div class="brand">EDU-SEC</div><ul id="menuList" class="menu"></ul></nav>
+<div class="app-wrap">
+<header><div class="header-left"><div class="title">Attendance</div><div id="clock">--:--:--</div></div><div class="header-actions"><button id="logoutBtn" class="btn logout">Logout</button></div></header>
+<main>
+  <div class="grid" style="grid-template-columns:1fr;">
+    <section class="card">
+      <h2>🕒 Attendance</h2>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <select id="attSection" class="select"></select>
+        <input id="attDate" type="date" class="input"/>
+        <button id="loadAtt" class="btn ghost">Load</button>
+      </div>
+      <div id="attContainer"><div class="muted small">Choose section and date to load attendance.</div></div>
+    </section>
+  </div>
+</main>
+</div>
+<div id="modalRoot" style="display:none"></div>
+</body></html>

@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Role Management - EDU-SEC</title>
+<link rel="stylesheet" href="../css/role-management.css">
+<script src="../js/page-utils.js" defer></script>
+<script src="../js/menu.js" defer></script>
+<script src="../js/pages/role-management.js" defer></script>
+</head>
+<body>
+<nav class="sidebar"><div class="brand">EDU-SEC</div><ul id="menuList" class="menu"></ul></nav>
+<div class="app-wrap">
+<header><div class="header-left"><div class="title">Role Management</div><div id="clock">--:--:--</div></div>
+<div class="header-actions"><button id="logoutBtn" class="btn logout">Logout</button></div></header>
+<main>
+  <div class="grid" style="grid-template-columns:1fr;">
+    <section class="card">
+      <h2>👥 Users</h2>
+      <div id="usersList"><div class="muted small">Loading users…</div></div>
+    </section>
+  </div>
+</main>
+</div>
+<div id="modalRoot" style="display:none"></div>
+</body></html>

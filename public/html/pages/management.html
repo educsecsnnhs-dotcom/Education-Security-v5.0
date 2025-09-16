@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Department Management</title>
+  <link rel="stylesheet" href="../../css/management.css"/>
+  <script src="../../js/utils.js"></script>
+  <script src="../../js/page-utils.js"></script>
+</head>
+<body>
+  <div id="app-header"></div>
+
+  <main class="container">
+    <h1>Department Management</h1>
+
+    <!-- Students & Teachers -->
+    <section class="card">
+      <h2>Students & Teachers</h2>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Role</th><th>Year/Section</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Announcements -->
+    <section class="card">
+      <h2>Department Announcements</h2>
+      <form id="announcementForm">
+        <input type="text" id="annTitle" placeholder="Title" required/>
+        <textarea id="annContent" placeholder="Write announcement..." required></textarea>
+        <button type="submit">Post Announcement</button>
+      </form>
+      <ul id="announcementList"></ul>
+    </section>
+
+    <!-- Activity Logs -->
+    <section class="card">
+      <h2>Recent Activity Logs</h2>
+      <ul id="activityList"></ul>
+    </section>
+  </main>
+
+  <script src="../../js/pages/management.js"></script>
+  <script>
+    initHeaderTickerClock({ schoolName: "Education Security Portal" });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SSG - EDU-SEC</title>
+  <link rel="stylesheet" href="../css/welcome.css">
+  <script src="../js/page-utils.js" defer></script>
+  <script src="../js/menu.js" defer></script>
+  <script src="../js/pages/ssg.js" defer></script>
+</head>
+<body>
+  <nav class="sidebar"><div class="brand">EDU-SEC</div><ul id="menuList" class="menu"></ul></nav>
+  <div class="app-wrap">
+    <header>
+      <div class="header-left"><div class="title">SSG Management</div><div id="clock">--:--:--</div></div>
+      <div class="header-actions"><button id="logoutBtn" class="btn logout">Logout</button></div>
+    </header>
+
+    <main>
+      <div class="grid" style="grid-template-columns:1fr;">
+        <section class="card">
+          <h2>🏛️ SSG Members & Events</h2>
+          <div id="ssgList"><div class="muted small">Loading SSG data…</div></div>
+        </section>
+        <section class="card" style="margin-top:12px">
+          <h2>➕ Quick Actions</h2>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="createMemberBtn" class="btn ghost" style="display:none">Create Member</button>
+            <button id="createEventBtn"

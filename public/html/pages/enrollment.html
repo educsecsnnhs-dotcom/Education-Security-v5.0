@@ -1,0 +1,45 @@
+<!doctype html><html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Enrollment</title>
+    <link rel="stylesheet" href="../css/enrollment.css">
+    <script src="../js/page-utils.js" defer>
+    </script>
+    <script src="../js/menu.js" defer>
+    </script>
+  </head>
+  <body>
+<nav class="sidebar"><div class="brand">EDU-SEC</div><ul id="menuList" class="menu"></ul></nav>
+<div class="app-wrap">
+<header><div class="header-left"><div class="title">Enrollment</div></div><div class="header-actions"><button id="logoutBtn" class="btn logout">Logout</button></div></header>
+<main>
+  <div class="grid" style="grid-template-columns:1fr;">
+    <section class="card">
+      <h2>📝 Enrollment Form</h2>
+      <form id="enrollForm">
+        <label>First name<br><input name="firstName" class="input"/></label><br>
+        <label>Last name<br><input name="lastName" class="input"/></label><br>
+        <label>Email<br><input name="email" class="input"/></label><br>
+        <label>Grade / Section<br><input name="section" class="input"/></label><br>
+        <div style="margin-top:12px"><button class="btn" type="submit">Submit</button></div>
+      </form>
+      <div id="enrollMsg" class="small muted"></div>
+    </section>
+  </div>
+</main>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.getElementById('enrollForm').addEventListener('submit', async (ev)=>{
+    ev.preventDefault();
+    const data = Object.fromEntries(new FormData(ev.target));
+    try{
+      const r = await PageUtils.fetchJson('/api/enrollment/submit', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+      if(r.ok){ document.getElementById('enrollMsg').textContent='Submitted. Registrar will process your enrollment.'; ev.target.reset(); }
+      else { document.getElementById('enrollMsg').textContent='Submission failed.'; }
+    }catch(e){ document.getElementById('enrollMsg').textContent='Error submitting.'; }
+  });
+});
+</script>
+</body></html>

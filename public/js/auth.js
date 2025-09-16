@@ -60,7 +60,10 @@ const Auth = {
     if (!Auth.isLoggedIn()) {
       window.location.href = "/html/login.html";
     }
-  }
+  },
+
+  // 🔹 Attach Caesar cipher so login.js can use Auth.caesarEncrypt()
+  caesarEncrypt: caesarEncrypt
 };
 
 // Expose Auth globally for other scripts

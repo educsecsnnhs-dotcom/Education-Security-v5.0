@@ -1,0 +1,96 @@
+/* Attendance Page Styles
+   Extends base layout from welcome.css
+*/
+
+/* Filter row (section/date/load) */
+#attSection,
+#attDate {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+#attSection:focus,
+#attDate:focus {
+  outline: none;
+  border-color: #457b9d;
+  box-shadow: 0 0 0 2px rgba(69, 123, 157, 0.2);
+}
+
+/* Load button matches theme */
+#loadAtt {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #457b9d;
+  background: #fff;
+  color: #457b9d;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+#loadAtt:hover {
+  background: #457b9d;
+  color: #fff;
+}
+
+/* Attendance container */
+#attContainer {
+  margin-top: 12px;
+}
+
+/* Table style for attendance */
+.att-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.att-table th,
+.att-table td {
+  padding: 8px 10px;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.att-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.att-table tr:nth-child(even) {
+  background: #fdfdfd;
+}
+
+/* Status tags (Present/Absent/Late) */
+.status {
+  padding: 3px 7px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status.present {
+  background: #e6f4ea;
+  color: #1e7d32;
+}
+
+.status.absent {
+  background: #fdecea;
+  color: #b71c1c;
+}
+
+.status.late {
+  background: #fff4e5;
+  color: #c77800;
+}
+
+/* Muted placeholder */
+#attContainer .muted {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+}

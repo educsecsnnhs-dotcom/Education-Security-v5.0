@@ -1,0 +1,136 @@
+/* ===============================
+   Vote Page Styles
+   =============================== */
+
+/* Card */
+.card {
+  padding: 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.card h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Vote container */
+#voteContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Loading / muted state */
+#voteContainer .muted {
+  color: #777;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Ballot card */
+.ballot {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  padding: 12px 14px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ballot:hover {
+  background: #f5f9ff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Ballot header */
+.ballot-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Ballot description */
+.ballot-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Candidate list */
+.candidate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.candidate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #eee;
+  transition: background 0.2s ease;
+}
+
+.candidate:hover {
+  background: #eef3ff;
+}
+
+/* Candidate name */
+.candidate-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Vote button */
+.vote-btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border: 1px solid #3a7afe;
+  background: #3a7afe;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.vote-btn:hover {
+  background: #2c63d6;
+}
+
+.vote-btn:active {
+  transform: scale(0.97);
+}
+
+/* Already voted state */
+.voted {
+  background: #eaffea;
+  border: 1px solid #b6e6b6;
+  color: #2c7a2c;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .candidate {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .vote-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

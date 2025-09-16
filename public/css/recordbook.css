@@ -1,0 +1,124 @@
+/* Record Book Page Styles
+   Extends welcome.css base theme
+*/
+
+/* Filters row */
+#selectSection,
+#selectSubject {
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#selectSection:focus,
+#selectSubject:focus {
+  border-color: #2a6df4;
+  box-shadow: 0 0 0 2px rgba(42, 109, 244, 0.15);
+  outline: none;
+}
+
+#loadRecord {
+  font-size: 0.9rem;
+  padding: 7px 14px;
+  border-radius: 6px;
+}
+
+/* Record container */
+#recordContainer {
+  min-height: 150px;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  padding: 14px;
+  background: #fafafa;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#recordContainer .muted {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Card heading */
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Table styling inside recordContainer */
+#recordContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+#recordContainer th,
+#recordContainer td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+#recordContainer th {
+  background: #f7f9fc;
+  font-weight: 600;
+  color: #444;
+}
+
+#recordContainer tr:hover td {
+  background: #f0f6ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  #selectSection,
+  #selectSubject,
+  #loadRecord {
+    flex: 1;
+    width: 100%;
+  }
+
+  #recordContainer table,
+  #recordContainer thead,
+  #recordContainer tbody,
+  #recordContainer th,
+  #recordContainer td,
+  #recordContainer tr {
+    display: block;
+  }
+
+  #recordContainer tr {
+    margin-bottom: 12px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 8px;
+  }
+
+  #recordContainer td {
+    padding: 6px 8px;
+    border: none;
+  }
+
+  #recordContainer th {
+    display: none;
+  }
+
+  #recordContainer td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #444;
+  }
+}

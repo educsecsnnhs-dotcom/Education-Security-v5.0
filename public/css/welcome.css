@@ -1,0 +1,137 @@
+/* Reset & Base */
+:root{
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --muted: #64748b;
+  --accent: #0b5fff;
+  --sidebar: #0f1724;
+  --sidebar-contrast: #0b2540;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+body{background:var(--bg);color:#0f1724}
+
+/* Layout */
+.layout{display:flex;min-height:100vh}
+
+/* Sidebar - collapsed by default, expands on hover */
+.sidebar{
+  width:60px;
+  background:var(--sidebar);
+  color:#fff;
+  transition:width .28s cubic-bezier(.2,.8,.2,1);
+  overflow:hidden;
+  position:fixed;
+  inset:0 auto 0 0;
+  z-index:1100;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.sidebar:hover{width:220px}
+
+.sidebar .brand{
+  width:100%;
+  padding:18px 12px;
+  font-weight:700;
+  font-size:14px;
+  text-align:center;
+  border-bottom:1px solid rgba(255,255,255,0.02);
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+}
+.sidebar .menu{list-style:none;margin:14px 0;padding:0;width:100%}
+.sidebar .menu li{width:100%}
+.sidebar .menu a{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:10px 14px;
+  color:inherit;
+  text-decoration:none;
+  font-size:0.95rem;
+  white-space:nowrap;
+  transition:background .12s ease;
+}
+.sidebar .menu a .icon{
+  width:36px;
+  text-align:center;
+  font-size:18px;
+}
+.sidebar .menu a:hover{background:var(--sidebar-contrast)}
+.sidebar .menu .label{display:none}
+.sidebar:hover .menu .label{display:inline}
+
+/* App wrapper */
+.app-wrap{
+  margin-left:60px; /* collapsed sidebar width */
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  transition:margin-left .28s cubic-bezier(.2,.8,.2,1);
+}
+.sidebar:hover ~ .app-wrap{margin-left:220px}
+
+/* Header */
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+  background: #fff;
+  border-bottom:1px solid #e6eef9;
+  position:sticky;
+  top:0;
+  z-index:900;
+}
+.header-left{display:flex;gap:14px;align-items:center}
+.title{font-size:1.15rem;font-weight:700}
+#clock{font-family:monospace;color:var(--muted);font-weight:600}
+
+/* Header actions */
+.header-actions{display:flex;gap:10px;align-items:center}
+.btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-size:0.9rem}
+.btn.ghost{background:#fff;border:1px solid #e6eef9;color:var(--accent)}
+.btn.logout{background:#ef4444;color:#fff}
+.btn.small{padding:6px 10px;font-size:0.85rem}
+
+/* Main grid */
+main{padding:22px}
+.grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+
+/* Cards */
+.card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 14px rgba(12,16,24,0.04)}
+.card h2{margin:0 0 10px;font-size:1rem;display:flex;gap:8px;align-items:center}
+
+/* user-info */
+.user-info h2{margin:0 0 6px;font-size:1.05rem}
+
+/* announcement list */
+.announcement-list{display:flex;flex-direction:column;gap:10px}
+.announcement{padding:12px;border-radius:10px;border:1px solid #eef2ff;background:linear-gradient(180deg,#fff,#fbfdff)}
+.announcement .meta{font-size:12px;color:var(--muted);margin-bottom:6px}
+
+/* Quick actions container */
+#quickActions{display:flex;gap:8px;flex-wrap:wrap}
+#quickActions a.btn.ghost{padding:8px 12px;border-radius:8px;background:#fff;border:1px solid #dbeafe;color:#0b5fff;text-decoration:none;display:inline-block}
+
+/* Right column */
+.aside-column{display:flex;flex-direction:column;gap:14px}
+.pdf-viewer{border:1px solid #e6eef9;border-radius:8px;overflow:hidden;min-height:240px;display:flex;align-items:center;justify-content:center;background:#fff}
+.pdf-viewer embed{width:100%;height:240px;border:none}
+
+/* Tips */
+.small.muted{color:var(--muted);font-size:0.9rem}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.45);display:flex;align-items:center;justify-content:center;z-index:2000}
+.modal{background:#fff;padding:18px;border-radius:12px;max-width:720px;width:94%;box-shadow:0 8px 30px rgba(2,6,23,0.2)}
+.modal h3{margin:0 0 8px}
+
+/* Responsive */
+@media (max-width:980px){
+  .grid{grid-template-columns:1fr}
+  .app-wrap{margin-left:0}
+  .sidebar{position:relative;width:100%;display:flex;flex-direction:row;height:auto}
+  .sidebar:hover{width:100%}
+  .sidebar .brand{text-align:left;padding-left:16px}
+}

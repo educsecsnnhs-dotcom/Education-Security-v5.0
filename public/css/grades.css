@@ -1,0 +1,73 @@
+/* Grades Page Styles
+   Extends base theme (welcome.css)
+*/
+
+/* Controls container */
+#gradesControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+/* Dropdown select */
+#gradesControls .select {
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#gradesControls .select:focus {
+  border-color: #2a6df4;
+  box-shadow: 0 0 0 2px rgba(42, 109, 244, 0.15);
+  outline: none;
+}
+
+/* Load button */
+#gradesControls .btn {
+  font-size: 0.9rem;
+  padding: 7px 14px;
+  border-radius: 6px;
+}
+
+/* Grades container */
+#gradesContainer {
+  min-height: 120px;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  padding: 14px;
+  background: #fafafa;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Placeholder text */
+#gradesContainer .muted {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Card heading */
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #gradesControls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #gradesControls .select,
+  #gradesControls .btn {
+    width: 100%;
+  }
+}

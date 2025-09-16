@@ -1,0 +1,76 @@
+/* Enrolled Students Page Styles
+   Extends base layout from welcome.css
+*/
+
+/* Enrolled list container */
+#enrolledList {
+  margin-top: 12px;
+}
+
+/* Table style */
+.enrolled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.enrolled-table th,
+.enrolled-table td {
+  padding: 8px 10px;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.enrolled-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.enrolled-table tr:nth-child(even) {
+  background: #fdfdfd;
+}
+
+/* Student name */
+.enrolled-table .student-name {
+  font-weight: 500;
+  color: #222;
+}
+
+/* Section + year level tags */
+.section-tag,
+.year-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.section-tag {
+  background: #e6f0fa;
+  color: #2451a6;
+}
+
+.year-tag {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* Muted placeholder */
+#enrolledList .muted {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .enrolled-table th,
+  .enrolled-table td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+}

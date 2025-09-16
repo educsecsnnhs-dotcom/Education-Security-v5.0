@@ -1,0 +1,75 @@
+/* Archives Page Styles
+   Extends base layout from welcome.css
+*/
+
+/* Archives List */
+#archivesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.archive-item {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  transition: background 0.2s, border 0.2s;
+}
+
+.archive-item:hover {
+  background: #f0f8ff;
+  border-color: #cce5ff;
+}
+
+/* Archive Title */
+.archive-item .title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: #1d3557;
+}
+
+/* Metadata (date, uploader, etc.) */
+.archive-item .meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Description or Notes */
+.archive-item .desc {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Download / Action Buttons */
+.archive-item .actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.archive-item .actions .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 5px;
+  border: 1px solid #457b9d;
+  background: #457b9d;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.archive-item .actions .btn:hover {
+  background: #356182;
+  border-color: #356182;
+}
+
+/* Muted placeholder (when empty) */
+#archivesList .muted {
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+}

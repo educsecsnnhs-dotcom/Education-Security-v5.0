@@ -1,0 +1,104 @@
+/* Role Management Page Styles
+   Extends welcome.css base theme
+*/
+
+/* Card styling */
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Heading */
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2a2a2a;
+}
+
+/* Users list container */
+#usersList {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 12px;
+  min-height: 150px;
+  font-size: 0.9rem;
+}
+
+/* Muted text for loading state */
+#usersList .muted {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Each user row */
+#usersList > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#usersList > div:last-child {
+  border-bottom: none;
+}
+
+#usersList > div:hover {
+  background: #f4f9ff;
+}
+
+/* User name + role label */
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Role action buttons */
+.role-actions button {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  margin-left: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.role-actions button:hover {
+  background: #eef3ff;
+  border-color: #99b3ff;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  #usersList > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .role-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,125 @@
+/* ===============================
+   Register Page Styles
+   Scoped for .form-container only
+================================= */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0056b3, #0088cc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ===============================
+   Form Container
+================================= */
+.form-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  color: #0056b3;
+}
+
+/* ===============================
+   Labels & Inputs
+================================= */
+.form-container label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 0.75rem; /* leave space for toggle */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-container input:focus {
+  border-color: #0056b3;
+}
+
+/* ===============================
+   Password Wrapper with Toggle
+================================= */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 2.8rem; /* space for eye button */
+}
+
+.password-wrapper .toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.password-wrapper .toggle-btn:hover {
+  color: #0056b3;
+}
+
+/* ===============================
+   Buttons & Links
+================================= */
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-container button[type="submit"]:hover {
+  background: #004494;
+}
+
+.form-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.form-container a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}

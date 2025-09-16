@@ -1,0 +1,77 @@
+/* Registrar Page Styles
+   Extends welcome.css base theme
+*/
+
+/* Section cards */
+.card {
+  padding: 16px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Headings */
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2a2a2a;
+}
+
+/* Enrollee / Enrolled lists */
+#enrolleeList,
+#enrolledList {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  background: #fafafa;
+  font-size: 0.9rem;
+  min-height: 120px;
+}
+
+/* Muted text */
+#enrolleeList .muted,
+#enrolledList .muted {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Common list items (assuming items will render as divs or rows) */
+#enrolleeList > div,
+#enrolledList > div {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#enrolleeList > div:last-child,
+#enrolledList > div:last-child {
+  border-bottom: none;
+}
+
+#enrolleeList > div:hover,
+#enrolledList > div:hover {
+  background: #f4f9ff;
+}
+
+/* Buttons inside lists */
+#enrolleeList button,
+#enrolledList button {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  margin-left: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+  section.card {
+    margin-top: 14px;
+  }
+}

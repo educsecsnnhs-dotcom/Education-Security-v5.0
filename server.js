@@ -24,9 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 // Allow frontend (JWT via Authorization header)
 app.use(cors({
   // ✅ IMPORTANT: Replace this placeholder with your actual Render frontend URL
-  // If your frontend is served by this same Express server, this should be your Render service's URL.
   origin: process.env.FRONTEND_ORIGIN || 'https://YOUR_RENDER_FRONTEND_URL.onrender.com',
-  credentials: true // Allow cookies/authorization headers to be sent
+  credentials: true
 }));
 
 // ------------------------------
@@ -65,8 +64,8 @@ const routesDir = path.join(ROOT, 'routes');
 if (fs.existsSync(routesDir)) {
   fs.readdirSync(routesDir).forEach(f => {
     if (!f.endsWith('.js')) return;
-    // ✅ Exclude explicit SSG routes from generic auto-mounting to avoid conflicts
-    if (['ssgElections.js', 'ssgAnnouncements.js', 'ssgProjects.js', 'ssg.js'].includes(f)) return;
+    // ✅ Exclude SSG main route from generic auto-mounting
+    if (['ssg.js'].includes(f)) return;
 
     const base = '/' + path.basename(f, '.js');
     const router = require(path.join(routesDir, f));
@@ -80,17 +79,10 @@ if (fs.existsSync(routesDir)) {
 }
 
 // ------------------------------
-// Explicit SSG Routes (Ensuring correct mounting)
+// Explicit SSG Route (only one exists in repo)
 // ------------------------------
 const ssgRouter = require('./routes/ssg'); // Main SSG controller routes
-const ssgElections = require('./routes/ssgElections');
-const ssgAnnouncements = require('./routes/ssgAnnouncements');
-const ssgProjects = require('./routes/ssgProjects');
-
-app.use('/api/ssg', ssgRouter); // Mount main SSG router at /api/ssg
-app.use('/api/ssg/elections', ssgElections);
-app.use('/api/ssg/announcements', ssgAnnouncements);
-app.use('/api/ssg/projects', ssgProjects);
+app.use('/api/ssg', ssgRouter);
 
 // ------------------------------
 // Compat routes for old frontend endpoints

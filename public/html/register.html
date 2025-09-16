@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register</title>
+  <link rel="stylesheet" href="../css/register.css" />
+  <script src="../js/auth.js" defer></script> <!-- ✅ Load auth.js first -->
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" required />
+        <button type="button" id="togglePassword" class="toggle-btn">👁️</button>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+  <script src="../js/register.js" defer></script> <!-- ✅ defer to ensure auth.js loads first -->
+</body>
+</html>
